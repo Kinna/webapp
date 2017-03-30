@@ -1,0 +1,7 @@
+<div class="notification-container">
+	<div ng-repeat="notification in notifications" class="notification-{{notification.type}}">
+		{{notification.text}}
+		<div class="notification-icon clickable" ng-click="closeNotification(notification.id)"><i class="fa fa-times"></i></div>
+	</div>
+</div>
+

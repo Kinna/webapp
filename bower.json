@@ -1,0 +1,20 @@
+{
+  "name": "webapp",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.9",
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "material-design-icons": "^2.2.3",
+    "lodash": "^4.13.1",
+    "fontawesome": "^4.7.0"
+  }
+}

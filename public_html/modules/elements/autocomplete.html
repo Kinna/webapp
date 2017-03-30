@@ -1,0 +1,9 @@
+<div>
+	<input class="form-control" ng-model="model" ng-keydown="openDropdown()" ng-blur="focusOut()">
+	<!--w-dropdown w-options="options | wContains:model"></w-dropdown-->
+
+	<div class="elements-dropdown" ng-class="{popup: popup}" ng-show="open">
+		<div class="elements-dropdown-option" ng-repeat="option in options | wContains:model" ng-click="selectOption(option)">{{option.name}}</div>
+	</div>
+</div>
+{{model}}

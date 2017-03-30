@@ -1,0 +1,26 @@
+<form name="loginForm" layout="column" layout-margin>
+	<div layout="column" layout-gt-xs="row">
+		<md-input-container>
+			<input name="email" ng-model="user.email" required placeholder="Email">
+			<div ng-messages="loginForm.email.$error">
+				<div ng-message="required">Email skal udfyldes</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container>
+			<input name="password" type="password" ng-model="user.password" required placeholder="Password">
+			<div ng-messages="loginForm.password.$error">
+				<div ng-message="required">Password skal udfyldes</div>
+			</div>
+		</md-input-container>
+	</div>
+
+	<div>
+		<md-checkbox class="md-primary" ng-model="user.rememberMe">
+			Husk mig
+		</md-checkbox>
+	</div>
+
+	<md-button class="md-raised md-primary">Log ind</md-button>
+
+</form>

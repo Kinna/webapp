@@ -1,0 +1,40 @@
+<div flex layout="column" layout-align-gt-xs="center center">
+	<div flex-xs layout-xs="column" layout-gt-xs="column" md-whiteframe="1" class="user-auth-box">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+
+				<md-button ng-show="!isView('login')" ng-click="back()" class="md-icon-button">
+					<md-icon>arrow_back</md-icon>
+				</md-button>
+
+
+				<span ng-show="isView('login')" flex>Log ind</span>
+				<span ng-show="isView('account')" flex>Opret konto</span>
+				<span ng-show="isView('reset')" flex>Nulstil password</span>
+
+				<span>{{title}}</span>
+			</div>
+		</md-toolbar>
+		<md-content layout="column" flex-xs>
+			<div ng-show="isView('login')">
+				<w-login-form w-title="title"></w-login-form>
+
+				<md-divider></md-divider>
+
+				<div layout="row" layout-align="space-between" layout-margin>
+					<md-button ng-click="createAccount()">
+						Opret konto
+					</md-button>
+
+					<md-button ng-click="resetPassword()">
+						Glemt password?
+					</md-button>
+				</div>
+			</div>
+
+			<w-create-account-form ng-show="isView('account')"></w-create-account-form>
+
+			<w-reset-password-form ng-show="isView('reset')"></w-reset-password-form>
+		</md-content>
+	</div>
+</div>

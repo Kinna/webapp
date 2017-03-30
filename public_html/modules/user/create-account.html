@@ -1,0 +1,39 @@
+<form name="accountForm" layout="column" layout-margin>
+	<div layout="column" layout-gt-xs="row">
+		<md-input-container>
+			<input name="name" ng-model="user.name" required placeholder="Navn">
+			<div ng-messages="accountForm.name.$error">
+				<div ng-message="required">Navn skal udfyldes</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container>
+			<input name="email" ng-model="user.email" required placeholder="Email">
+			<div ng-messages="accountForm.email.$error">
+				<div ng-message="required">Email skal udfyldes</div>
+			</div>
+		</md-input-container>
+	</div>
+
+	<div layout="column" layout-gt-xs="row">
+		<md-input-container>
+			<input name="password" type="password" ng-model="user.password" required placeholder="Password">
+			<div ng-messages="accountForm.password.$error">
+				<div ng-message="required">Password skal udfyldes</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container>
+			<input name="passwordRepeated" type="password" ng-model="user.passwordRepeated" required placeholder="Gentag password">
+			<div ng-messages="accountForm.passwordRepeated.$error">
+				<div ng-message="required">Password skal udfyldes</div>
+				<div ng-message="mismatch">Matcher ikke</div>
+			</div>
+		</md-input-container>
+	</div>
+
+	<md-button class="md-raised md-primary" ng-click="createAccount()">Opret konto</md-button>
+
+	{{accountForm.passwordRepeated}}
+</form>
+

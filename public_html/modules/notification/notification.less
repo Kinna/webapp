@@ -1,0 +1,64 @@
+@error-color: #f34235;
+@warning-color: #fe9700;
+@success-color: #4caf50;
+@font-color: #ffffff;
+
+@width: 250px;
+
+@notification: {
+	height: auto;
+	padding: 15px;
+	color: @font-color;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	z-index: 100;
+	position: relative;
+};
+
+.notification-parent{
+	position: relative;
+}
+
+.notification-container{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: @width;
+}
+
+.notification .text{
+	padding-right: 40px;
+}
+
+.notification-icon{
+	 position: absolute;
+	 top: 15px;
+	 right: 15px;
+ }
+
+.notification-icon:hover{
+	font-size: 18px;
+	top: 13px;
+	right: 13px;
+}
+
+.notification-error{
+	background-color: @error-color;
+	@notification();
+}
+
+.notification-warning{
+	background-color: @warning-color;
+	@notification();
+}
+
+.notification-success{
+	background-color: @success-color;
+	@notification();
+}
+
+md-toast .md-toast-content.notification-error md-icon,
+md-toast .md-toast-content.notification-warning md-icon,
+md-toast .md-toast-content.notification-success md-icon{
+	color: @font-color;
+}

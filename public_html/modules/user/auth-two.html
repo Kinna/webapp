@@ -1,0 +1,34 @@
+<div flex layout="column" layout-align-gt-xs="center center">
+	<div flex-xs layout-xs="column" layout-gt-xs="column" md-whiteframe="1" class="user-auth-box">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+
+				<md-button ng-show="reset" ng-click="back()" class="md-icon-button">
+					<md-icon>arrow_back</md-icon>
+				</md-button>
+
+				<span ng-show="reset">
+					Nulstil password
+				</span>
+
+				<span ng-hide="reset">{{title}}</span>
+			</div>
+		</md-toolbar>
+		<md-content layout="column" flex-xs>
+
+			<md-tabs md-dynamic-height md-stretch-tabs="always" ng-hide="reset">
+				<md-tab label="Log ind">
+					<w-login-form></w-login-form>
+					<md-button ng-click="resetPassword()">Glemt password?</md-button>
+				</md-tab>
+
+				<md-tab label="Opret konto">
+					<w-create-account-form></w-create-account-form>
+				</md-tab>
+			</md-tabs>
+
+			<w-reset-password-form ng-show="reset"></w-reset-password-form>
+
+		</md-content>
+	</div>
+</div>
