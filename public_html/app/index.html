@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="timeplanApp">
+<head>
+	<title>Web App</title>
+
+    <!-- build:remove:dev -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="js/angular.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+
+    <!-- /build -->
+
+    <!-- build:remove:prod -->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/angular.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/lodash.js"></script>
+
+	<script src="app/app.module.js"></script>
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.controller.js"></script>
+
+
+
+	<script src="modules/notification/notification.module.js"></script>
+	<script src="modules/notification/notification.service.js"></script>
+	<script src="modules/notification/notification.directive.js"></script>
+
+    <script src="modules/api/api.module.js"></script>
+    <script src="modules/api/api.service.js"></script>
+
+	<script src="modules/elements/elements.module.js"></script>
+	<script src="modules/elements/checkbox.directive.js"></script>
+
+
+    <!-- /build -->
+
+	<link rel="stylesheet" href="css/notification.css">
+	<link rel="stylesheet" href="css/elements.css">
+    <link rel="stylesheet" href="css/timeplan-app.css">
+</head>
+<body ng-controller="AppController">
+	Web App
+</body>
+</html>
+
