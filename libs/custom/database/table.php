@@ -28,7 +28,7 @@ class Table
 
 	}
 
-	public function model()
+	public function init()
 	{
 		$this->addColumn('id', 'INT UNSIGNED AUTO_INCREMENT PRIMARY KEY');
 		$this->addColumn('date_created', 'DATETIME');
@@ -52,6 +52,10 @@ class Table
 
 	// Data types
 
+	public function string($name){
+		$this->addColumn($name, 'TINYTEXT');
+	}
+
 	public function tinytext($name)
 	{
 		$this->addColumn($name, 'TINYTEXT');
@@ -64,12 +68,26 @@ class Table
 
 	public function int($name)
 	{
-
+		$this->addColumn($name, 'INT');
 	}
 
 	public function datetime($name)
 	{
+		$this->addColumn($name, 'DATETIME');
+	}
 
+	public function date($name)
+	{
+		$this->addColumn($name, 'DATE');
+	}
+
+	public function timestamp($name)
+	{
+		$this->addColumn($name, 'TIMESTAMP');
+	}
+
+	public function bool($name, $default = false){
+		$this->addColumn($name, 'TINYINT(1) DEFAULT ' . $default);
 	}
 
 	// Alterings
