@@ -1,9 +1,7 @@
 .idea
 node_modules
 bower_components
-app/controllers/*
-app/models/*
-app/views/*
+app
 database/*
 public_html/app/*
 public_html/css/*
@@ -12,4 +10,5 @@ public_html/js/*
 .env
 log.txt
 TODO.md
+mysql.md
 
