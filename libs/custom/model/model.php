@@ -1,31 +1,35 @@
 <?php
 
+namespace Model;
 /**
  * Created by PhpStorm.
  * User: Kinna
  * Date: 12-09-2016
  * Time: 09:50
  */
+use Logger\Logger;
+use Database\Database;
+
 abstract class Model
 {
-	private $db;
-	private $record = array();
-	protected $table;
+	protected $db;
+	protected $tableRow;
 
-	public function __construct($db)
+	public function __construct()
 	{
-		$this->db = $db;
-
+		Logger::log('Model::construct()');
+		$this->db = new Database();
 	}
 
-	public function get_record_by_id($id)
+	public function getRecordById($id)
 	{
-		return $this->db->select($this->table)->where('id','=',$id)->execute();
+		$array = $this->tableRow->get(null, array('id' => '= ' . $id));
+		return count($array) > 0 ? $array[0] : false;
 	}
 
-	public function get_all_records()
+	public function getAllRecords($columns = null)
 	{
-		return $this->db->select($this->table)->execute();
+		return $this->tableRow->get($columns);
 	}
 
 	public function set_record_field($field, $value)
