@@ -66,9 +66,9 @@ class Table
 		$this->addColumn($name, 'TEXT');
 	}
 
-	public function int($name)
+	public function int($name, $default = 0)
 	{
-		$this->addColumn($name, 'INT');
+		$this->addColumn($name, 'INT DEFAULT ' . $default);
 	}
 
 	public function datetime($name)
