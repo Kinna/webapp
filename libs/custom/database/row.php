@@ -41,7 +41,7 @@ class Row
 			$sql .= ' WHERE ';
 			$first = true;
 			foreach ($filter as $key => $value){
-				$v = explode($value, ' ');
+				$v = explode(' ', $value);
 				if(!$first) $sql .= ' AND ';
 				$sql .= ' ' . $key . ' ' . $v[0] . ' ?';
 				array_push($values, $v[1]);
@@ -51,7 +51,8 @@ class Row
 		if($order != null) $sql .= ' ORDER BY ' . $order;
 
 		$statement = $this->prepareAndExecute($sql, $values);
-		return $statement->fetchAll(PDO::FETCH_ASSOC);
+		if($statement == false) return false;
+		else return $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function insert($data){
@@ -65,22 +66,23 @@ class Row
 			$first = false;
 		}
 		$statement = $this->prepareAndExecute($sql, $values);
-		if(!$statement) return false;
+		if($statement == false) return false;
 		else return true;
 	}
 
 	private function prepareAndExecute($sql, $values){
+		Logger::log($sql);
 		try{
 			$statement = $this->db->prepare($sql);
-		}catch(PDOException $e){
-			Logger::log('Unable to prepare query string "' . $sql . '"": ' . $e->getMessage());
+		}catch(\PDOException $e){
+			Logger::log('Unable to prepare query string <' . $sql . '>: ' . $e->getMessage());
 			return false;
 		}
 
 		try{
 			$statement->execute($values);
-		}catch(PDOException $e){
-			Logger::log('Unable to execute query "' . $sql . '":' . $e->getMessage());
+		}catch(\PDOException $e){
+			Logger::log('Unable to execute query <' . $sql . '>: ' . $e->getMessage());
 			return false;
 		}
 
