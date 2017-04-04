@@ -105,5 +105,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['processhtml:dev', 'less:dev']);
     grunt.registerTask('production', ['processhtml:prod', 'less:prod', 'uglify']);
     grunt.registerTask('bower', ['copy:all']);
-	
+
 };

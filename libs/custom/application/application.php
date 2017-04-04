@@ -8,6 +8,7 @@
  */
 namespace Application;
 
+
 use Environment\Environment;
 use Logger\Logger;
 
@@ -24,14 +25,15 @@ class Application
 			$filenameArray = array();
 			for($i = 0; $i < count($pathArray); $i++)
 			{
-				//echo $pathArray[$i] . '<br />';
+				//echo $pathArray[$i] . ', ';
+				// Convert from capital letter split do dash-split
 				$elementArray = preg_split('/(?=[A-Z])/', $pathArray[$i], -1, PREG_SPLIT_NO_EMPTY);
 				$element = strtolower(join('-', $elementArray));
 				array_push($filenameArray, $element);
 			}
 			$filename = join('/', $filenameArray);
 
-			//echo $filename . '<br />';
+			//echo '<br />Filename: ' . $filename . '<br />';
 			$libFile = __DIR__.'/../'.$filename.'.php';
 			$controllerFile = __DIR__.'/../../../app/controllers/'.$filename.'.php';
 			$modelFile = __DIR__.'/../../../app/models/'.$filename.'.php';
@@ -168,39 +170,40 @@ class Application
 	private function parseAction($action, $vars)
 	{
 		$actions = explode('@', $action);
+		// Return view
 		if(count($actions) == 1){
-			// Return view
 			$file = $actions[0] . '.php';
 			echo file_get_contents($_ENV['ROOT'] . '/app/views/' . $file);
 
 			Logger::log('Display file ' . $file);
 		}
-		else if(count($actions) == 2)
-		{
-			// Execute controller function
-			Logger::log('Executing controller function');
+		// Execute controller function
+		else if(count($actions) == 2){
+
+			Logger::log('Controller: ' . $actions[0]);
+			Logger::log('Method: ' . $actions[1]);
 			if(!class_exists($actions[0])){
 				Logger::log('Controller does not exist: ' . $actions[0]);
 				http_response_code(500);
 				return;
 			}
-
+			Logger::log('Creating controller');
 			$controller = new $actions[0]();
 			$method = $actions[1];
-
+			Logger::log('Checking method');
 			if(!method_exists($controller, $method)){
 				Logger::log('Method does not exist in controller object ' . $actions[0] . ': ' . $method);
 				http_response_code(500);
 				return;
 			}
 
+			Logger::log('Executing controller function');
 			header('Content-Type: application/json');
 			http_response_code(200);
 			$controller->getPostData();
 			$controller->$method($vars);
 		}
-		else
-		{
+		else{
 			Logger::log('No action for ' . $action);
 			http_response_code(404);
 		}
