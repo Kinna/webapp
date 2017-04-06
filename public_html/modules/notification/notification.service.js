@@ -13,16 +13,16 @@ angular.module('notification').factory('NotificationService', ['$rootScope', '$t
 		return notifications;
 	};
 
-	service.error = function(text, timeout){
-		addNotification('error', text, timeout);
+	service.error = function(text, timeout, group){
+		addNotification('error', text, timeout, group);
 	};
 
-	service.warning = function(text, timeout){
-		addNotification('warning', text, timeout);
+	service.warning = function(text, timeout, group){
+		addNotification('warning', text, timeout, group);
 	};
 
-	service.success = function(text, timeout){
-		addNotification('success', text, timeout);
+	service.success = function(text, timeout, group){
+		addNotification('success', text, timeout, group);
 	};
 
 
@@ -32,12 +32,14 @@ angular.module('notification').factory('NotificationService', ['$rootScope', '$t
 		$rootScope.$broadcast('notificationChange', notifications);
 	};
 
-	function addNotification(type, text, timeout){
+	function addNotification(type, text, timeout, group){
+		if(_.isUndefined(group)) group = null;
 		var id = getId();
 		notifications.push({
 			id: id,
 			type: type,
-			text: text
+			text: text,
+			group: group
 		});
 		if(timeout){
 			$timeout(function(){
