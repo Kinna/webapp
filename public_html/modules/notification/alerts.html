@@ -1,0 +1,5 @@
+<div class="alert alert-dismissible alert-{{notification.type}}" ng-repeat="notification in notifications | group:group">
+	<button type="button" class="close" ng-click="closeNotification(notification.id)"><span>&times;</span></button>
+	{{notification.text}}
+</div>
+
