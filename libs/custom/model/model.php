@@ -14,11 +14,13 @@ abstract class Model
 {
 	protected $db;
 	protected $tableRow;
+	protected $validator;
 
 	public function __construct()
 	{
 		Logger::log('Model::construct()');
 		$this->db = new Database();
+		$this->validator = new Validator();
 	}
 
 	public function getRecordById($id)
