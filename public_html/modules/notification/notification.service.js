@@ -14,7 +14,7 @@ angular.module('notification').factory('NotificationService', ['$rootScope', '$t
 	};
 
 	service.error = function(text, timeout, group){
-		addNotification('error', text, timeout, group);
+		addNotification('danger', text, timeout, group);
 	};
 
 	service.warning = function(text, timeout, group){
