@@ -6,8 +6,7 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components"
+    "node_modules"
   ],
   "dependencies": {
     "angular-material": "^1.0.9",
@@ -15,6 +14,7 @@
     "angular-route": "^1.5.7",
     "material-design-icons": "^2.2.3",
     "lodash": "^4.13.1",
-    "fontawesome": "^4.7.0"
+    "fontawesome": "^4.7.0",
+    "angular-bootstrap": "^2.5.0"
   }
 }

@@ -47,6 +47,11 @@ module.exports = function(grunt) {
                     {src: ['bower_components/bootstrap/dist/js/bootstrap.min.js'], dest: 'public_html/js/bootstrap.min.js'},
                     {src: ['bower_components/bootstrap/dist/css/bootstrap.css'], dest: 'public_html/css/bootstrap.css'},
                     {src: ['bower_components/bootstrap/dist/css/bootstrap.min.css'], dest: 'public_html/css/bootstrap.min.css'},
+                    // Angular bootstrap
+                    {src: ['bower_components/angular-bootstrap/ui-bootstrap.js'], dest: 'public_html/js/ui-bootstrap.js'},
+                    {src: ['bower_components/angular-bootstrap/ui-bootstrap.min.js'], dest: 'public_html/js/ui-bootstrap.min.js'},
+                    {src: ['bower_components/angular-bootstrap/ui-bootstrap-tpls.js'], dest: 'public_html/js/ui-bootstrap-tpls.js'},
+                    {src: ['bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'], dest: 'public_html/js/ui-bootstrap-tpls.min.js'},
                     // Font awesome
                     {src: ['bower_components/font-awesome/css/font-awesome.min.css'], dest: 'public_html/css/font-awesome.min.css'},
                     {src: ['bower_components/font-awesome/css/font-awesome.css'], dest: 'public_html/css/font-awesome.css'},
