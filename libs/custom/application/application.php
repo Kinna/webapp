@@ -200,7 +200,7 @@ class Application
 			Logger::log('Executing controller function');
 			header('Content-Type: application/json');
 			http_response_code(200);
-			$controller->getPostData();
+			$controller->fetchPostData();
 			$controller->$method($vars);
 		}
 		else{

@@ -18,12 +18,13 @@ class Controller
 	{
 	}
 
-	public function getPostData()
+	public function fetchPostData()
 	{
 		if(count($_POST) > 1) $this->postData = $_POST;
 		else{
 			$this->postData = json_decode(file_get_contents('php://input'));
 			if($this->postData == '') $this->postData = array();
+			if(is_object($this->postData)) $this->postData = get_object_vars($this->postData);
 		}
 		$this->filesData = $_FILES;
 	}
