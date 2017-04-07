@@ -8,7 +8,7 @@ angular.module('dialog').factory('DialogService', ['$uibModal', '$rootScope', fu
 	 * @param title The title of the dialog
 	 * @param acceptText The text on the accept button
 	 * @param template The template used in the dialog body. Header and footer are standard.
-	 * @param controller The controller used by the template. The controller must call $scope.dialogClose in order to
+	 * @param controller The controller used by the template. The controller must have two functions named dialogAccept() and dialogCancel(). These functions must call $scope.dialogClose() or $scope.dialogDismiss() to close the dialog.
 	 * close the dialog with acceptance.
 	 * @param onAccept Callback function called if user accepted.
 	 */
