@@ -32,6 +32,11 @@ angular.module('notification').factory('NotificationService', ['$rootScope', '$t
 		$rootScope.$broadcast('notificationChange', notifications);
 	};
 
+	service.closeGroup = function(group){
+		_.remove(notifications, {group: group});
+		$rootScope.$broadcast('notificationChange', notifications);
+	};
+
 	function addNotification(type, text, timeout, group){
 		if(_.isUndefined(group)) group = null;
 		var id = getId();
