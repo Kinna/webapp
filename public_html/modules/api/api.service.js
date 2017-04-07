@@ -11,7 +11,7 @@ angular.module('api').factory('ApiService', ['$http', function($http){
 			onResponse(response.data.error, response.data.data);
 		}, function(response){
 			console.error(response);
-			onResponse('HTTP error', null);
+			onResponse('http', null);
 		});
 	};
 
@@ -20,7 +20,7 @@ angular.module('api').factory('ApiService', ['$http', function($http){
 			onResponse(response.data.error, response.data.data);
 		}, function(response){
 			console.error(response);
-			onResponse('HTTP error', null);
+			onResponse('http', null);
 		});
 	};
 
