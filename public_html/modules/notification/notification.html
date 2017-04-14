@@ -1,5 +1,4 @@
 <div class="notification-container">
-	Group: {{group}}
 	<div ng-repeat="notification in notifications | group:group" class="notification-{{notification.type}}">
 		{{notification.text}}
 		<div class="notification-icon clickable" ng-click="closeNotification(notification.id)"><i class="fa fa-times"></i></div>
