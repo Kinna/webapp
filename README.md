@@ -1,3 +1,33 @@
+# Preparing new project
+
+## Directories and files
+
+Create the following directories:
+
+* app
+	* controllers
+	* models
+	* views
+* database
+
+Then move following files from the _start_files_ directory:
+
+- /app/routes.php
+- /database/create.php
+- /public_html/app/app.module.js
+- /public_html/app/app.routes.js
+- /public_html/app/index.html
+- /.env
+
+## PHPStorm
+
+1. Click _Edit Configurations_ in dropdown in upper right corner
+2. Click _Add new configuration_ and select _PHP Buildin Web Server_ 
+3. Name the server - eg. _PHP Server_
+4. If error _Interpreter is not specified or invalid_ is present at the bottom of the dialog, click _Fix_ and select the installed PHP version from the dropdown.
+
+## XDebug
+
 # Building the web app
 
 Node.js must be installed on the computer in order to build the app.
