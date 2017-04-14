@@ -30,6 +30,30 @@ class Validator{
 		return true;
 	}
 
+	public function string($data){
+		return is_string($data);
+	}
+
+	public function arrayOfInt($data){
+		if(!is_array($data)) return false;
+		foreach($data as $val){
+			if(!is_int($val)) return false;
+		}
+		return true;
+	}
+
+	public function arrayOfDecimal($data){
+		if(!is_array($data)) return false;
+		foreach($data as $val){
+			if(!is_int($val) && !is_double($val) && !is_float($val)) return false;
+		}
+		return true;
+	}
+
+	public function arrayOfString($data){
+		return false;
+	}
+
 
 
 	public function validateObject($data, $expect){
@@ -46,6 +70,12 @@ class Validator{
 					break;
 				case 'stringNotEmpty':
 					$propertyResult[$key] = $this->stringNotEmpty($data[$key]);
+					break;
+				case 'arrayOfInt':
+					$propertyResult[$key] = $this->arrayOfInt($data[$key]);
+					break;
+				case 'arrayOfDecimal':
+					$propertyResult[$key] = $this->arrayOfDecimal($data[$key]);
 					break;
 				default:
 					$propertyResult[$key] = null;
