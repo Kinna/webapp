@@ -6,10 +6,15 @@ angular.module('numbers').directive('msDecimal', ['NumbersService', function(Num
 	return{
 		restrict: 'A',
 		require: 'ngModel',
+		scope: {
+			ngModel: '='
+		},
 		link: function(scope, element, attr, controller){
 
 			controller.$parsers.push(function(data){
-				return NumbersService.stringToDecimal(data);
+				var val = NumbersService.stringToDecimal(data);
+				scope.ngModel = val;
+				return val;
 			});
 
 			controller.$formatters.push(function(data){

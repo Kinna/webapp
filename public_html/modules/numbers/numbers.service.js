@@ -22,5 +22,25 @@ angular.module('numbers').factory('NumbersService', [function(){
 		return newData.replace(/\./g, ',');
 	};
 
+	/*
+	 If the format is correct integer format, the value will be converted from string to integer. If the format is
+	 incorrect, the input will be returned as output in string format.
+	 */
+	service.stringToInteger = function(data){
+		var newData = data;
+		if(!_.isString(newData)) newData = angular.toJson(newData);
+		newData = newData.replace(/,/g, '.');
+		if(newData.match(/^(-?\d*)$/)) return parseInt(newData);
+		else return data;
+	};
+
+	/*
+	 Will convert the number to string format.
+	 */
+	service.integerToString = function(data){
+		data = _.toString(data);
+		return data;//.replace(/^[0]*/g, '');
+	};
+
 	return service;
 }]);
