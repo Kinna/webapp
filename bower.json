@@ -15,6 +15,7 @@
     "material-design-icons": "^2.2.3",
     "lodash": "^4.13.1",
     "fontawesome": "^4.7.0",
-    "angular-bootstrap": "^2.5.0"
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7"
   }
 }
