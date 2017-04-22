@@ -9,6 +9,12 @@ Create the following directories:
 	* models
 	* views
 * database
+* public_html
+	* app
+		* less
+	* js
+	* css
+	* less
 
 Then move following files from the _start_files_ directory:
 
@@ -22,9 +28,10 @@ Then move following files from the _start_files_ directory:
 ## PHPStorm
 
 1. Click _Edit Configurations_ in dropdown in upper right corner
-2. Click _Add new configuration_ and select _PHP Buildin Web Server_ 
+2. Click _Add new configuration_ and select _PHP Built-in Web Server_ 
 3. Name the server - eg. _PHP Server_
-4. If error _Interpreter is not specified or invalid_ is present at the bottom of the dialog, click _Fix_ and select the installed PHP version from the dropdown.
+4. Update the _Document root_ path to the /public_html directory
+5. If error _Interpreter is not specified or invalid_ is present at the bottom of the dialog, click _Fix_ and select the installed PHP version from the dropdown.
 
 ## XDebug
 
