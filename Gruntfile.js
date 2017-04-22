@@ -53,13 +53,13 @@ module.exports = function(grunt) {
                     {src: ['bower_components/angular-bootstrap/ui-bootstrap-tpls.js'], dest: 'public_html/js/ui-bootstrap-tpls.js'},
                     {src: ['bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'], dest: 'public_html/js/ui-bootstrap-tpls.min.js'},
                     // Font awesome
-                    {src: ['bower_components/font-awesome/css/font-awesome.min.css'], dest: 'public_html/css/font-awesome.min.css'},
-                    {src: ['bower_components/font-awesome/css/font-awesome.css'], dest: 'public_html/css/font-awesome.css'},
-                    {src: ['bower_components/font-awesome/fonts/FontAwesome.otf'], dest: 'public_html/fonts/FontAwesome.otf'},
-                    {src: ['bower_components/font-awesome/fonts/fontawesome-webfont.eot'], dest: 'public_html/fonts/fontawesome-webfont.eot'},
-                    {src: ['bower_components/font-awesome/fonts/fontawesome-webfont.svg'], dest: 'public_html/fonts/fontawesome-webfont.svg'},
-                    {src: ['bower_components/font-awesome/fonts/fontawesome-webfont.ttf'], dest: 'public_html/fonts/fontawesome-webfont.ttf'},
-                    {src: ['bower_components/font-awesome/fonts/fontawesome-webfont.woff'], dest: 'public_html/fonts/fontawesome-webfont.woff'},
+                    {src: ['bower_components/fontawesome/css/font-awesome.min.css'], dest: 'public_html/css/font-awesome.min.css'},
+                    {src: ['bower_components/fontawesome/css/font-awesome.css'], dest: 'public_html/css/font-awesome.css'},
+                    {src: ['bower_components/fontawesome/fonts/FontAwesome.otf'], dest: 'public_html/fonts/FontAwesome.otf'},
+                    {src: ['bower_components/fontawesome/fonts/fontawesome-webfont.eot'], dest: 'public_html/fonts/fontawesome-webfont.eot'},
+                    {src: ['bower_components/fontawesome/fonts/fontawesome-webfont.svg'], dest: 'public_html/fonts/fontawesome-webfont.svg'},
+                    {src: ['bower_components/fontawesome/fonts/fontawesome-webfont.ttf'], dest: 'public_html/fonts/fontawesome-webfont.ttf'},
+                    {src: ['bower_components/fontawesome/fonts/fontawesome-webfont.woff'], dest: 'public_html/fonts/fontawesome-webfont.woff'},
                     {src: ['bower_components/font-awesome/fonts/fontawesome-webfont.woff2'], dest: 'public_html/fonts/fontawesome-webfont.woff2'}
                 ]
             }
