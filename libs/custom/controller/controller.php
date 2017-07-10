@@ -37,4 +37,14 @@ class Controller
 		header('Content-Type: application/json');
 		echo json_encode($array);
 	}
+
+	protected function respondError($code, $msg){
+		http_response_code($code);
+		echo $msg;
+	}
+
+	protected function respondJson($data){
+		header('Content-Type: application/json');
+		echo json_encode($data);
+	}
 }
