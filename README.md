@@ -35,6 +35,8 @@ Then move following files from the _start_files_ directory:
 
 ## XDebug
 
+Toggle the _Start Listening for PHP Debug Connections_ button in upper right corner.
+
 # Building the web app
 
 Node.js must be installed on the computer in order to build the app.
