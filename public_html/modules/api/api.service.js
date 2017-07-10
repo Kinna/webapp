@@ -8,19 +8,19 @@ angular.module('api').factory('ApiService', ['$http', function($http){
 	// The callback onResponse has two arguments: error and data
 	service.get = function(url, onResponse){
 		$http.get(url).then(function(response){
-			onResponse(response.data.error, response.data.data);
+			onResponse(null, response.data);
 		}, function(response){
-			console.error(response);
-			onResponse('http', null);
+			console.error(response.data);
+			onResponse(response.data, null);
 		});
 	};
 
 	service.post = function(url, data, onResponse){
 		$http.post(url, angular.toJson(data)).then(function(response){
-			onResponse(response.data.error, response.data.data);
+			onResponse(null, response.data);
 		}, function(response){
-			console.error(response);
-			onResponse('http', null);
+			console.error(response.data);
+			onResponse(response.data, null);
 		});
 	};
 
