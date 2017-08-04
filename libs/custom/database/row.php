@@ -70,6 +70,10 @@ class Row
 		else return true;
 	}
 
+	public function lastId(){
+		return $this->db->lastInsertId();
+	}
+
 	private function prepareAndExecute($sql, $values){
 		Logger::log($sql);
 		try{
@@ -80,12 +84,12 @@ class Row
 		}
 
 		try{
-			$statement->execute($values);
+			$ok = $statement->execute($values);
 		}catch(\PDOException $e){
 			Logger::log('Unable to execute query <' . $sql . '>: ' . $e->getMessage());
 			return false;
 		}
 
-		return $statement;
+		return $ok;
 	}
 }
