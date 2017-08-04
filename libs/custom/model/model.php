@@ -49,11 +49,15 @@ abstract class Model
 	/**
 	 * Create a new record in the table.
 	 * @param $data Array of key-value pairs.
-	 * @return True on success and false on error.
+	 * @return The new record on success and false otherwise
 	 */
 	public function createRecord($data)
 	{
-		return $this->tableRow->insert($data);
+		$ok = $this->tableRow->insert($data);
+		if(!$ok) return false;
+
+		$id = $this->tableRow->lastId();
+		return $this->getRecordById($id);
 	}
 
 
