@@ -29,13 +29,15 @@ class Controller
 		$this->filesData = $_FILES;
 	}
 
-	protected function respond($error, $data = null)
-	{
-		$array = array('error' => $error, 'data' => $data);
-		Logger::log('Respond:');
-		Logger::log(json_encode($array));
-		header('Content-Type: application/json');
-		echo json_encode($array);
+	protected function respond($code, $data){
+		if($code != 200) http_response_code($code);
+
+		if(is_array($data) || is_object($data)){
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}else{
+			echo $data;
+		}
 	}
 
 	protected function respondError($code, $msg){
